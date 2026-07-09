@@ -1,6 +1,6 @@
 :root {
   --color-primary: #B23A2E; /* Deep red/brick */
-  --color-secondary: #2B2523; /* Charcoal stone */
+  --color-secondary: #000000; /* Black */
   --color-neutral: #FAF6F3; /* Warm off-white */
   --color-accent: #D9A566; /* Sandstone tan */
 
@@ -28,6 +28,7 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 80px; /* Accounts for fixed navbar */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -106,7 +107,7 @@ main {
 }
 
 .section-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   margin-bottom: 1rem;
 }
 
