@@ -1,0 +1,23 @@
+.loaderContainer {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-neutral);
+  pointer-events: all;
+}
+
+.logoWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 173px;
+  height: 173px;
+  object-fit: contain;
+}

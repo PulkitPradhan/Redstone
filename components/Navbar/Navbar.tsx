@@ -2,11 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useLoading } from '@/components/LoadingContext';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
+  const { isLoading } = useLoading();
 
   useEffect(() => {
     const checkScrollTop = () => {
@@ -30,6 +34,17 @@ export default function Navbar() {
         <nav className={styles.navbar}>
           <div className={styles.navInner}>
             <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
+              {!isLoading && (
+                <motion.div layoutId="site-logo" className={styles.logoImageWrapper}>
+                  <Image 
+                    src="/logo.webp" 
+                    alt="Redstone Driving School Logo" 
+                    width={76} 
+                    height={76}
+                    style={{ objectFit: 'contain' }}
+                  />
+                </motion.div>
+              )}
               <div className={styles.logoPlaceholder}>
                 Redstone Driving School
               </div>

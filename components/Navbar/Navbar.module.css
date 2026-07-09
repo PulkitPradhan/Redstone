@@ -53,6 +53,19 @@
   align-items: center;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.logoImageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logoPlaceholder {
   font-family: var(--font-heading);
   font-weight: 800;

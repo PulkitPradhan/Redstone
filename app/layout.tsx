@@ -3,6 +3,8 @@ import { Inter, Poppins } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
+import { LoadingProvider } from "@/components/LoadingContext";
+import SiteLoader from "@/components/SiteLoader/SiteLoader";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,11 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <body>
-        <SmoothScroll>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </SmoothScroll>
+        <LoadingProvider>
+          <SiteLoader />
+          <SmoothScroll>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+          </SmoothScroll>
+        </LoadingProvider>
       </body>
     </html>
   );
