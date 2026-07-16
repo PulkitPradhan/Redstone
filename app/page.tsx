@@ -61,6 +61,7 @@ export default function Home() {
             </div>
           </ScrollReveal>
           <div className={styles.featuresGrid}>
+            {[
               { icon: <Award size={36} strokeWidth={1.5} />, title: 'Best Service At Best Price' },
               { icon: <UserCheck size={36} strokeWidth={1.5} />, title: 'Experienced & Calm Instructors' },
               { icon: <Users size={36} strokeWidth={1.5} />, title: 'Noble & Humble Office Staff' },
