@@ -15,7 +15,7 @@ export default function About() {
       <Hero 
         title="About Us"
         subtitle="Dedicated to helping you become a safe, confident driver for life through modern digital education and expert in-car instruction."
-        imageUrl="/instructor_portrait.png"
+        imageUrl="/hero_car_driving.png"
       />
 
       <section className={styles.section}>
@@ -24,12 +24,12 @@ export default function About() {
             <div className={styles.imageColumn}>
               <ScrollReveal yOffset={60}>
                 <ScrollParallax offset={30} className={styles.imagePlaceholder} style={{ overflow: 'hidden', padding: 0 }}>
-                  <img src="/instructor_portrait.png" alt="Instructor Sunny" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', display: 'block'}} />
+                  <img src="/training_car.png" alt="Redstone Training Car" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', display: 'block'}} />
                 </ScrollParallax>
               </ScrollReveal>
               <ScrollReveal yOffset={60} delay={0.2}>
                 <ScrollParallax offset={20} className={styles.carImagePlaceholder} style={{ overflow: 'hidden', padding: 0 }}>
-                  <img src="/online_course_mockup.png" alt="Digital Learning Platform" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', display: 'block'}} />
+                  <img src="/hero_slide_2.png" alt="Redstone Fleet" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', display: 'block'}} />
                 </ScrollParallax>
               </ScrollReveal>
             </div>
