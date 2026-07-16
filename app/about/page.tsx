@@ -14,7 +14,7 @@ export default function About() {
     <>
       <Hero 
         title="About Us"
-        subtitle="Dedicated to helping you become a safe, confident driver for life through modern digital education."
+        subtitle="Dedicated to helping you become a safe, confident driver for life through modern digital education and expert in-car instruction."
         imageUrl="/instructor_portrait.png"
       />
 
@@ -38,17 +38,17 @@ export default function About() {
               <ScrollReveal>
                 <h2>Meet Your Instructor</h2>
                 <p>
-                  Hello! I am Sukhsimran "Sunny" Seera, the owner and lead instructor at Redstone Driving School. Redstone is a hub of trained professionals backed by more than three decades of rich experience. We are known for preparing convinced, trained, and adept drivers by instilling the utmost confidence in them through our comprehensive online modules.
+                  Hello! I am Sukhsimran "Sunny" Seera, the owner and lead instructor at Redstone Driving School. Redstone is a hub of trained professionals backed by more than three decades of rich experience. We are known for preparing convinced, trained, and adept drivers by instilling the utmost confidence in them through our comprehensive online classes and calm, expert in-car instruction.
                 </p>
                 <p>
-                  Our aim is to build professional drivers through safe driving practices. Our endeavor is to provide an extraordinary learning experience that you can access from anywhere, at any time.
+                  Our aim is to build professional drivers through safe driving practices. We provide a complete learning experience—from mastering the rules of the road online at home, to getting behind the wheel and learning exactly how to drive safely in real-world conditions.
                 </p>
               </ScrollReveal>
               
               <ScrollReveal delay={0.1}>
                 <h3>Certifications & Experience</h3>
                 <ul>
-                  <li>Class 5 Online Classes Certified</li>
+                  <li>Class 5 In-Car & Online Classes Certified</li>
                   <li>Insurance Reduction Course Certified</li>
                   <li>4+ Years of Professional Teaching Experience</li>
                   <li>First Aid & CPR Certified</li>

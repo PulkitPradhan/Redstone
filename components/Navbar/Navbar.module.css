@@ -42,7 +42,7 @@
 }
 
 .navbar {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .navInner {
@@ -69,7 +69,7 @@
 .logoPlaceholder {
   font-family: var(--font-playfair);
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   color: var(--color-primary);
   letter-spacing: 0.05em;
 }

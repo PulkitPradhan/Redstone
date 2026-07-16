@@ -27,7 +27,13 @@ export default function ScrollReveal({
       initial={{ opacity: 0, y: yOffset }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ 
+        type: 'spring', 
+        damping: 20, 
+        stiffness: 80, 
+        mass: 1, 
+        delay 
+      }}
     >
       {children}
     </motion.div>

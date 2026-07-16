@@ -39,8 +39,8 @@ export default function Navbar() {
                   <Image 
                     src="/logo.webp" 
                     alt="Redstone Driving School Logo" 
-                    width={76} 
-                    height={76}
+                    width={52} 
+                    height={52}
                     style={{ objectFit: 'contain' }}
                   />
                 </motion.div>

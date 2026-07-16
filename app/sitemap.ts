@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://redstonexyz.com'
+  const baseUrl = 'https://redstonedriving.com'
 
   return [
     {
@@ -32,6 +32,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/reviews-faq`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/registration`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.8,
     },
   ]

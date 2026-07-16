@@ -11,6 +11,15 @@
   overflow: hidden;
 }
 
+.parallaxContainer {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  right: 0;
+  bottom: -100px; /* Extend top/bottom to prevent white gaps during parallax */
+  z-index: 0;
+}
+
 .bgSlide {
   position: absolute;
   top: 0;
@@ -30,7 +39,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75); /* 25% opacity for the background image */
+  background: radial-gradient(circle at center, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.85) 100%);
   z-index: 1;
 }
 
@@ -42,7 +51,7 @@
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(1.75rem, 8vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;

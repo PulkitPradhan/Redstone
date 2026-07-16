@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import styles from './Hero.module.css';
 
 interface HeroProps {
@@ -27,6 +28,9 @@ export default function Hero({
 }: HeroProps) {
   const images = imageUrls || (imageUrl ? [imageUrl] : []);
   const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 300]);
 
   useEffect(() => {
     if (images.length <= 1) return;
@@ -40,16 +44,21 @@ export default function Hero({
 
   return (
     <section className={styles.hero}>
-      {images.map((url, idx) => (
-        <div
-          key={url}
-          className={styles.bgSlide}
-          style={{
-            backgroundImage: `url(${url})`,
-            opacity: idx === currentIndex ? 1 : 0
-          }}
-        />
-      ))}
+      <motion.div 
+        className={styles.parallaxContainer}
+        style={{ y }}
+      >
+        {images.map((url, idx) => (
+          <div
+            key={url}
+            className={styles.bgSlide}
+            style={{
+              backgroundImage: `url(${url})`,
+              opacity: idx === currentIndex ? 1 : 0
+            }}
+          />
+        ))}
+      </motion.div>
       <div className={styles.overlay}></div>
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>

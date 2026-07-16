@@ -30,6 +30,7 @@
   justify-content: center;
   color: var(--color-secondary);
   font-weight: bold;
+  overflow: hidden;
 }
 
 .welcomeContent p {
@@ -143,30 +144,37 @@
 }
 
 .priceCard {
-  background: #fff;
-  border-radius: 8px;
-  padding: 3rem 2rem;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.04);
   position: relative;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.priceCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.04);
 }
 
 .popularBadge {
   position: absolute;
-  top: -15px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-accent);
-  color: var(--color-secondary);
-  padding: 0.5rem 1.5rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  padding: 0.35rem 1rem;
   border-radius: 20px;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .priceCard h3 {
@@ -177,7 +185,7 @@
 .price {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--color-primary);
+  color: #000;
   margin-bottom: 2rem;
 }
 
@@ -195,9 +203,35 @@
 }
 
 .priceFeatures li {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.recommendedBox {
+  background: transparent;
+  color: #555;
+  padding: 1.5rem 0 0 0;
+  margin: 1.5rem 0 0 0; 
+  border-top: 1px dashed #e2e8f0;
+  text-align: left;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-top: auto; 
+}
+
+.recommendedBox h4 {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .centerAction {
@@ -274,7 +308,47 @@
 }
 
 @media (max-width: 768px) {
+  .section, .sectionAlt {
+    padding: 3rem 1rem;
+  }
   .welcomeGrid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .featuresGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+  }
+  .featureCard {
+    min-width: 0;
+  }
+  .featureIcon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.75rem;
+  }
+  .featureIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .featureCard h3 {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+  .priceCard {
+    padding: 1.5rem 1rem;
+  }
+  .price {
+    font-size: 1.75rem;
+  }
+  .priceFeatures {
+    margin-bottom: 1.5rem;
+  }
+  .ctaBand {
+    padding: 3rem 1rem;
+  }
+  .ctaBand h2 {
+    font-size: 1.5rem;
   }
 }

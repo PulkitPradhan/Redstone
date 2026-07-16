@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://redstonexyz.com/sitemap.xml',
+    sitemap: 'https://redstonedriving.com/sitemap.xml',
   }
 }

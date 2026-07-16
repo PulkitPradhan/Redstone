@@ -12,10 +12,10 @@ export default function SiteLoader() {
   useEffect(() => {
     // Sequence: 
     // 0ms: logo appears
-    // 2000ms: start fading out loader and transitioning logo
+    // 800ms: start fading out loader and transitioning logo
     const endTimer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 800);
 
     return () => {
       clearTimeout(endTimer);
