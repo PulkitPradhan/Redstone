@@ -12,42 +12,38 @@ export default function Courses() {
   return (
     <>
       <Hero 
-        title="Courses & Pricing"
-        subtitle="Affordable, high-quality instruction. We are proud to offer rates $100 less per course than comparable Calgary driving schools."
-        ctaText="Book a Lesson"
-        ctaLink="/contact"
+        title="Online Courses & Pricing"
+        subtitle="Find the perfect driving course for your needs. We offer flexible options and experienced instructors to get you confidently behind the wheel."
+        ctaText="Enroll Now"
+        ctaLink="/registration"
+        imageUrl="/online_course_mockup.png"
       />
 
       <section className={styles.sectionAlt}>
         <div className={styles.container}>
           <div className="section-header">
-            <h2>Our Driving Programs</h2>
+            <h2>Our Online Driving Programs</h2>
           </div>
           
           <div className={styles.courseList}>
-            <div id="beginner" className={styles.courseItem}>
-              <h3>Beginner Lessons</h3>
-              <p>Ground-up instruction for new drivers. We cover all the basics, including vehicle control, rules of the road, and safe driving habits to ensure you start your driving journey with confidence.</p>
+            <div id="basic" className={styles.courseItem}>
+              <h3>Basic Course</h3>
+              <p>RECOMMENDED IF: You're reasonably comfortable as a driver and have some experience. This package includes 15 Hours of Online Classes and Interactive Quizzes to reinforce your learning.</p>
             </div>
             
-            <div id="defensive" className={styles.courseItem}>
-              <h3>Defensive Driving</h3>
-              <p>Learn advanced hazard awareness and safe-driving techniques. This course focuses on anticipating dangerous situations and reacting safely to prevent accidents.</p>
+            <div id="premium" className={styles.courseItem}>
+              <h3>Premium Course</h3>
+              <p>RECOMMENDED IF: You want more theoretical practice in different situations to feel more confident. This package includes 29 Hours of Online Classes and Advanced Scenario Modules.</p>
             </div>
             
-            <div id="highway" className={styles.courseItem}>
-              <h3>Highway Driving</h3>
-              <p>Build confidence for highway speeds and merging. We will practice entering and exiting highways safely, maintaining speed, and changing lanes in high-speed traffic.</p>
+            <div id="ultimate" className={styles.courseItem}>
+              <h3>Ultimate Course</h3>
+              <p>RECOMMENDED IF: You have little to no driving experience or you feel a bit nervous behind the wheel. This package includes 35 Hours of comprehensive Online Classes focusing on fundamental rules of the road.</p>
             </div>
             
-            <div id="winter" className={styles.courseItem}>
-              <h3>Winter Driving</h3>
-              <p>Alberta-specific snow and ice handling. Master the skills needed to navigate slippery roads, recover from skids, and drive safely during our harsh winters.</p>
-            </div>
-            
-            <div id="refresher" className={styles.courseItem}>
-              <h3>Brush-Up / Refresher Classes</h3>
-              <p>For licensed drivers or those who already have some experience but need a confidence reset before their road test or after a break from driving.</p>
+            <div id="elite" className={styles.courseItem}>
+              <h3>Elite Course</h3>
+              <p>RECOMMENDED IF: You're living in remote towns or cities from Calgary like NANTON, STRATHMORE, CROSSFIELD, COCHRANE, BRAGG CREEK, PRIDDIS, MILLARVILLE, DIAMOND VALLEY, LONGVIEW, BLACKIE AND so on. This package includes 25 Hours of Online Classes tailored for rural and highway scenarios.</p>
             </div>
           </div>
         </div>
@@ -56,64 +52,64 @@ export default function Courses() {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className="section-header">
-            <h2>Pricing Packages</h2>
+            <h2>Online Pricing Packages</h2>
           </div>
           
           <div className={styles.pricingGrid}>
             <div className={styles.priceCard}>
-              <h3>Single Lesson</h3>
-              <div className={styles.price}>$TBD<span>/hr</span></div>
+              <h3>Basic</h3>
+              <div className={styles.price}>$699<span>/pkg</span></div>
               <ul className={styles.priceFeatures}>
-                <li>1 Hour In-Car Instruction</li>
-                <li>Free Pick-up & Drop-off</li>
-                <li>Targeted Skill Practice</li>
-                <li>Flexible Scheduling</li>
+                <li>15 Hours Online Classes</li>
+                <li>Interactive Quizzes</li>
+                <li>Reasonably comfortable driver</li>
+                <li>Some experience</li>
               </ul>
-              <Link href="/contact" className="btn-primary">Book Now</Link>
-            </div>
-
-            <div className={styles.priceCard}>
-              <h3>5-Lesson Package</h3>
-              <div className={styles.price}>$TBD<span>/pkg</span></div>
-              <ul className={styles.priceFeatures}>
-                <li>5 Hours In-Car Instruction</li>
-                <li>Free Pick-up & Drop-off</li>
-                <li>City & Highway Basics</li>
-                <li>Progress Tracking</li>
-              </ul>
-              <Link href="/contact" className="btn-primary">Book Now</Link>
-            </div>
-
-            <div className={styles.priceCard}>
-              <h3>10-Lesson Package</h3>
-              <div className={styles.price}>$TBD<span>/pkg</span></div>
-              <ul className={styles.priceFeatures}>
-                <li>10 Hours In-Car Instruction</li>
-                <li>Free Pick-up & Drop-off</li>
-                <li>Comprehensive Road Test Prep</li>
-                <li>Mock Road Test Included</li>
-              </ul>
-              <Link href="/contact" className="btn-primary">Book Now</Link>
+              <Link href="/registration" className="btn-primary">Enroll Now</Link>
             </div>
 
             <div className={styles.priceCard} style={{border: '2px solid var(--color-primary)'}}>
               <div className={styles.popularBadge}>Most Popular</div>
-              <h3>Full Course Bundle</h3>
-              <div className={styles.price}>$TBD<span>/pkg</span></div>
+              <h3>Premium</h3>
+              <div className={styles.price}>$969<span>/pkg</span></div>
               <ul className={styles.priceFeatures}>
-                <li>In-Class & In-Car Instruction</li>
-                <li>Insurance Reduction Certificate</li>
-                <li>Free Pick-up & Drop-off</li>
-                <li>Maximum Insurance Discount</li>
+                <li>29 Hours Online Classes</li>
+                <li>Advanced Scenario Modules</li>
+                <li>More theoretical practice</li>
+                <li>Feel more confident</li>
               </ul>
-              <Link href="/contact" className="btn-primary">Book Now</Link>
+              <Link href="/registration" className="btn-primary">Enroll Now</Link>
+            </div>
+
+            <div className={styles.priceCard}>
+              <h3>Ultimate</h3>
+              <div className={styles.price}>$1349<span>/pkg</span></div>
+              <ul className={styles.priceFeatures}>
+                <li>35 Hours Online Classes</li>
+                <li>Fundamental Rules Focus</li>
+                <li>Little to no driving experience</li>
+                <li>Nervous behind the wheel</li>
+              </ul>
+              <Link href="/registration" className="btn-primary">Enroll Now</Link>
+            </div>
+
+            <div className={styles.priceCard}>
+              <h3>Elite</h3>
+              <div className={styles.price}>$899<span>/pkg</span></div>
+              <ul className={styles.priceFeatures}>
+                <li>25 Hours Online Classes</li>
+                <li>Rural & Highway Focus</li>
+                <li>For remote towns / cities</li>
+                <li>Surrounding Calgary areas</li>
+              </ul>
+              <Link href="/registration" className="btn-primary">Enroll Now</Link>
             </div>
           </div>
 
           <div className={styles.policyNote}>
-            <p><strong>Free pick-up and drop-off included at no extra cost</strong> within our service areas.</p>
-            <p>Please note: A 24-hour cancellation notice is required for all lessons.</p>
-            <p style={{marginTop: '1rem', color: 'var(--color-accent)'}}>All lessons are conducted in a 2024 Toyota Corolla (Automatic) equipped with dual brakes.</p>
+            <p><strong>Instant digital access included at no extra cost</strong> anywhere in Alberta.</p>
+            <p>Please note: A high-speed internet connection is required for all video modules.</p>
+            <p style={{marginTop: '1rem', color: 'var(--color-accent)'}}>All online lessons are accessible via desktop, tablet, and mobile devices.</p>
           </div>
         </div>
       </section>

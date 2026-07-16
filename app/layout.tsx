@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Inter, Poppins, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
@@ -20,10 +20,19 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Redstone Driving School | Calgary's Trusted Driving School",
   description:
     "Learn to drive with confidence. Personalized, patient instruction from a certified Class 5 instructor serving Calgary, Airdrie, Chestermere & Cochrane.",
+  icons: {
+    icon: '/logo.webp',
+  },
 };
 
 export default function RootLayout({
@@ -32,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} ${playfair.variable}`}>
       <body>
         <LoadingProvider>
           <SiteLoader />

@@ -12,10 +12,6 @@ export default function Footer() {
             <p className={styles.desc}>
               Personalized, patient instruction from a certified Class 5 instructor. Learn to drive with confidence.
             </p>
-            <div className={styles.socials}>
-              <span className={styles.socialPlaceholder}>FB</span>
-              <span className={styles.socialPlaceholder}>IG</span>
-            </div>
           </div>
 
           {/* Column 2: Quick Links */}

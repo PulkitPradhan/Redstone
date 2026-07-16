@@ -6,11 +6,22 @@
   justify-content: center;
   text-align: center;
   background-color: #000000;
+  color: #ffffff;
+  padding: 4rem 1rem;
+  overflow: hidden;
+}
+
+.bgSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: #ffffff;
-  padding: 4rem 1rem;
+  transition: opacity 1.5s ease-in-out;
+  z-index: 0;
 }
 
 .overlay {
@@ -19,11 +30,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.9)
-  );
+  background: rgba(0, 0, 0, 0.75); /* 25% opacity for the background image */
   z-index: 1;
 }
 

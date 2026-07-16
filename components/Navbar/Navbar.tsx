@@ -65,8 +65,9 @@ export default function Navbar() {
               <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
               <li><Link href="/courses" onClick={() => setIsOpen(false)}>Courses & Pricing</Link></li>
               <li><Link href="/reviews-faq" onClick={() => setIsOpen(false)}>Reviews & FAQ</Link></li>
+              <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
               <li>
-                <Link href="/contact" className="btn-primary" onClick={() => setIsOpen(false)}>Book Now</Link>
+                <Link href="/registration" className="btn-primary" onClick={() => setIsOpen(false)}>Registration</Link>
               </li>
             </ul>
           </div>

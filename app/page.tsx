@@ -3,17 +3,19 @@ import Hero from '@/components/Hero/Hero';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 import ScrollParallax from '@/components/ScrollReveal/ScrollParallax';
 import styles from './page.module.css';
+import { Award, UserCheck, Users, BookOpen, Smile, Calendar, Map, Lightbulb, SprayCan } from 'lucide-react';
 
 export default function Home() {
   return (
     <>
       <Hero 
-        title="Learn to Drive with Confidence — Calgary's Trusted Driving School"
-        subtitle="Personalized, patient instruction from a certified Class 5 instructor serving Calgary, Airdrie, Chestermere & Cochrane."
-        ctaText="Call or Text to Book"
-        ctaLink="tel:403-763-9365"
-        secondaryCtaText="View Courses"
-        secondaryCtaLink="/courses"
+        title="Redstone Driving School - Comprehensive Online Driver Education"
+        subtitle="A hub of trained professionals backed by rich experience. Build your driving knowledge from the comfort of your home."
+        ctaText="View Online Courses"
+        ctaLink="/courses"
+        secondaryCtaText="Contact Us"
+        secondaryCtaLink="/contact"
+        imageUrls={['/hero_car_driving.png', '/hero_slide_1.png', '/hero_slide_2.png', '/hero_slide_3.png']}
       />
 
       {/* Welcome / About */}
@@ -28,16 +30,13 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Hi, I'm Sukhsimran "Sunny" Seera. With over 4 years of teaching experience, I'm dedicated to providing patient, calm, and one-on-one coaching to help you master the road.
+                  Hi, I'm Sukhsimran "Sunny" Seera. Redstone is a hub of trained professionals backed by more than three decades of rich experience. We are known for preparing convinced, trained, and adept drivers by instilling the utmost confidence in them through our comprehensive online modules.
+                </p>
+                <p>
+                  Our aim is to build professional drivers through safe driving practices. Our endeavor is to provide an extraordinary learning experience that you can access from anywhere, at any time.
                 </p>
               </ScrollReveal>
               <ScrollReveal delay={0.2}>
-                <ul className={styles.featureList}>
-                  <li>Class 5 In-Class & In-Car Certified</li>
-                  <li>Insurance Reduction Certified</li>
-                  <li>Dual-Brake Fully Insured Vehicle (2024 Toyota Corolla)</li>
-                  <li>Multilingual Instruction: English, Punjabi, Hindi</li>
-                </ul>
                 <Link href="/about" className="btn-primary" style={{marginTop: '1rem'}}>
                   Learn More About Us
                 </Link>
@@ -45,7 +44,7 @@ export default function Home() {
             </div>
             <div className={styles.welcomeImage}>
               <ScrollParallax offset={40} className={styles.welcomeImageParallaxWrapper} style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                [Instructor / Car Photo Placeholder]
+                <img src="/online_learning_hero.png" alt="Online Driving Course" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px'}} />
               </ScrollParallax>
             </div>
           </div>
@@ -57,23 +56,23 @@ export default function Home() {
         <div className={styles.container}>
           <ScrollReveal>
             <div className="section-header">
-              <h2>Why Choose Redstone</h2>
+              <h2>Why Choose Us?</h2>
             </div>
           </ScrollReveal>
           <div className={styles.featuresGrid}>
             {[
-              { icon: '$', title: 'Affordable Pricing', desc: '$100 less per course than comparable Calgary driving schools.' },
-              { icon: '🚗', title: 'Free Pick-up & Drop-off', desc: 'We pick you up from home or school at no extra cost.' },
-              { icon: '🛡️', title: 'Fully Insured & Safe', desc: 'Students are fully insured in our modern, dual-brake 2024 Toyota Corolla.' },
-              { icon: '🎓', title: 'Certified Instructor', desc: 'Class 5 in-class & in-car certified, plus Insurance Reduction certified.' },
-              { icon: '🗣️', title: 'Multilingual', desc: 'Comfortable instruction in English, Punjabi, and Hindi.' },
-              { icon: '📅', title: 'Flexible Scheduling', desc: 'Available every day to fit your busy schedule with ease.' },
+              { icon: <Award size={36} strokeWidth={1.5} />, title: 'Best Service At Best Price' },
+              { icon: <UserCheck size={36} strokeWidth={1.5} />, title: 'Experienced & Calm Instructors' },
+              { icon: <Users size={36} strokeWidth={1.5} />, title: 'Noble & Humble Office Staff' },
+              { icon: <BookOpen size={36} strokeWidth={1.5} />, title: 'Clear Balanced Modules & Teaching Methods' },
+              { icon: <Smile size={36} strokeWidth={1.5} />, title: 'Healthy Joyful Environment & Confident Students' },
+              { icon: <Map size={36} strokeWidth={1.5} />, title: 'Assurance Of Covering All Aspects Of Driving' },
+              { icon: <Lightbulb size={36} strokeWidth={1.5} />, title: 'Reasonable & Analytical Problem-Solving Techniques' }
             ].map((feature, i) => (
               <ScrollReveal key={i} delay={i * 0.1}>
                 <div className={styles.featureCard}>
                   <div className={styles.featureIcon}>{feature.icon}</div>
                   <h3>{feature.title}</h3>
-                  <p>{feature.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -86,11 +85,10 @@ export default function Home() {
         <div className={styles.container}>
           <ScrollReveal yOffset={20}>
             <ul className={styles.servicesList}>
-              <li><Link href="/courses#beginner">Beginner Lessons</Link></li>
-              <li><Link href="/courses#defensive">Defensive Driving</Link></li>
-              <li><Link href="/courses#highway">Highway Driving</Link></li>
-              <li><Link href="/courses#winter">Winter Driving</Link></li>
-              <li><Link href="/courses#refresher">Brush-Up / Refresher</Link></li>
+              <li><Link href="/courses#basic">Basic Course</Link></li>
+              <li><Link href="/courses#premium">Premium Course</Link></li>
+              <li><Link href="/courses#ultimate">Ultimate Course</Link></li>
+              <li><Link href="/courses#elite">Elite Course</Link></li>
             </ul>
           </ScrollReveal>
         </div>
@@ -101,32 +99,30 @@ export default function Home() {
         <div className={styles.container}>
           <ScrollReveal>
             <div className="section-header">
-              <h2>Popular Packages</h2>
+              <h2>Online Driving Packages</h2>
             </div>
           </ScrollReveal>
           <div className={styles.pricingGrid}>
             <ScrollReveal delay={0.1} className={styles.priceCard}>
-              <h3>5-Lesson Package</h3>
-              <div className={styles.price}>$TBD<span>/pkg</span></div>
+              <h3>Basic</h3>
+              <div className={styles.price}>$699<span>/pkg</span></div>
               <ul className={styles.priceFeatures}>
-                <li>5 Hours In-Car Instruction</li>
-                <li>Free Pick-up & Drop-off</li>
-                <li>City & Highway Basics</li>
-                <li>Dual-Brake Vehicle</li>
+                <li>15 Hours Online Classes</li>
+                <li>Interactive Quizzes</li>
+                <li>RECOMMENDED IF: You're reasonably comfortable as a driver and have some experience</li>
               </ul>
-              <Link href="/contact" className="btn-primary">Book Now</Link>
+              <Link href="/registration" className="btn-primary">Enroll Now</Link>
             </ScrollReveal>
             <ScrollReveal delay={0.2} className={styles.priceCard} style={{border: '2px solid var(--color-primary)'}}>
               <div className={styles.popularBadge}>Most Popular</div>
-              <h3>Full Course Bundle</h3>
-              <div className={styles.price}>$TBD<span>/pkg</span></div>
+              <h3>Premium</h3>
+              <div className={styles.price}>$969<span>/pkg</span></div>
               <ul className={styles.priceFeatures}>
-                <li>In-Class & In-Car Instruction</li>
-                <li>Insurance Reduction Certificate</li>
-                <li>Free Pick-up & Drop-off</li>
-                <li>Comprehensive Training</li>
+                <li>29 Hours Online Classes</li>
+                <li>Advanced Scenario Modules</li>
+                <li>RECOMMENDED IF: You want more theoretical practice in different situations to feel more confident</li>
               </ul>
-              <Link href="/contact" className="btn-primary">Book Now</Link>
+              <Link href="/registration" className="btn-primary">Enroll Now</Link>
             </ScrollReveal>
           </div>
           <ScrollReveal delay={0.3}>
@@ -142,14 +138,14 @@ export default function Home() {
         <div className={styles.container}>
           <ScrollReveal>
             <div className="section-header">
-              <h2>What Our Students Say</h2>
+              <h2>What Our Students Say...</h2>
             </div>
           </ScrollReveal>
           <div className={styles.testiGrid}>
             {[
-              { text: "Sunny was so patient and helped me pass on my first try!", author: "Student Name" },
-              { text: "Great instructor, very calm, and the free pick-up was so convenient.", author: "Student Name" },
-              { text: "I felt totally prepared for my road test. Highly recommend Redstone!", author: "Student Name" }
+              { text: "I enjoyed and benefited from my time with Redstone Driving School's online courses, and I would recommend them to anyone who is looking to increase their knowledge before getting behind the wheel. The modules were clear, flexible, and easy to work with. Before taking the Basic course, I had driven only a handful of times and was anxious. After the online lessons, I was much more confident.", author: "Veronica Moreau" },
+              { text: "From the moment I registered for their online program till I completed the course, it was a smooth experience. I took their basic insurance reduction program online. The content is very knowledgeable and has amazing coaching elements. It focuses on areas which need improvement. Highly recommended!", author: "Sundaraj Lakshmipathy" },
+              { text: "Five stars definitely not adequate to give Redstone their due! Great experience; the online portal had me feeling comfortable and relaxed. I knew that I would do well on my written test because I felt well-prepared. The course gave many bits of information and advice which are not in the standard learner's manual. I highly recommend Redstone - it's a first class online driving school.", author: "Phillip Noel" }
             ].map((testi, i) => (
               <ScrollReveal key={i} delay={i * 0.15}>
                 <div className={styles.testiCard}>
@@ -167,14 +163,14 @@ export default function Home() {
       <section className={styles.ctaBand}>
         <div className={styles.container}>
           <ScrollReveal>
-            <h2>Ready to hit the road?</h2>
-            <p>Join hundreds of successful students and become a confident driver with Redstone Driving School.</p>
+            <h2>Master the Rules of the Road with Redstone</h2>
+            <p>Start your online driving education today.</p>
             <div style={{display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap'}}>
               <a href="tel:403-763-9365" className="btn-secondary" style={{backgroundColor: '#fff', color: 'var(--color-primary)'}}>
                 Call 403-763-9365
               </a>
-              <Link href="/contact" className="btn-secondary" style={{color: '#fff', borderColor: '#fff'}}>
-                Book Online
+              <Link href="/courses" className="btn-secondary" style={{color: '#fff', borderColor: '#fff'}}>
+                View Courses
               </Link>
             </div>
           </ScrollReveal>

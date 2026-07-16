@@ -28,21 +28,21 @@
 }
 
 .courseItem h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
 .courseItem p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 /* Pricing Grid */
 .pricingGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .priceCard {
@@ -73,13 +73,13 @@
 }
 
 .priceCard h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 1rem;
   color: var(--color-secondary);
 }
 
 .price {
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 800;
   color: var(--color-primary);
   margin-bottom: 2rem;
@@ -115,7 +115,7 @@
 
 .policyNote p {
   margin-bottom: 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
 
 .policyNote p:last-child {

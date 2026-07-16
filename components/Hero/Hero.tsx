@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './Hero.module.css';
 
@@ -9,6 +12,7 @@ interface HeroProps {
   secondaryCtaText?: string;
   secondaryCtaLink?: string;
   imageUrl?: string;
+  imageUrls?: string[];
 }
 
 export default function Hero({
@@ -19,9 +23,33 @@ export default function Hero({
   secondaryCtaText,
   secondaryCtaLink,
   imageUrl,
+  imageUrls,
 }: HeroProps) {
+  const images = imageUrls || (imageUrl ? [imageUrl] : []);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
-    <section className={styles.hero} style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : {}}>
+    <section className={styles.hero}>
+      {images.map((url, idx) => (
+        <div
+          key={url}
+          className={styles.bgSlide}
+          style={{
+            backgroundImage: `url(${url})`,
+            opacity: idx === currentIndex ? 1 : 0
+          }}
+        />
+      ))}
       <div className={styles.overlay}></div>
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>
