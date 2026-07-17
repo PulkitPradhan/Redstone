@@ -85,6 +85,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Expert Instructor Section */}
+      <section className={styles.instructorSection}>
+        <div className={styles.container}>
+          <div className={styles.instructorGrid}>
+            <ScrollReveal className={styles.instructorContent}>
+              <h2>Expert In-Car Instruction</h2>
+              <p>
+                Our driving lessons aren't just about passing a test—they're about building lifelong skills for the road. 
+                With patient, certified instructors by your side, you will learn defensive driving techniques, 
+                hazard perception, and the confidence needed to handle any driving situation safely.
+              </p>
+              <p>
+                Whether you're a complete beginner or looking to refresh your skills, our tailored in-car sessions 
+                are designed to make you a confident and capable driver.
+              </p>
+              <Link href="/about" className="btn-secondary" style={{ marginTop: '1rem', display: 'inline-block' }}>Meet Your Instructor</Link>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.2}>
+              <div className={styles.instructorImage}>
+                <img src="/instructor_teaching.png" alt="Instructor teaching driving" style={{width: '100%', height: 'auto', display: 'block'}} />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* Services Strip */}
       <section className={styles.servicesStrip}>
         <div className={styles.container}>
