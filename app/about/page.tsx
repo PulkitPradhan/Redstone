@@ -15,7 +15,7 @@ export default function About() {
       <Hero 
         title="About Us"
         subtitle="Dedicated to helping you become a safe, confident driver for life through modern digital education and expert in-car instruction."
-        imageUrl="/hero_car_driving.png"
+        imageUrl="/about_hero_bg.png"
       />
 
       <section className={styles.section}>
