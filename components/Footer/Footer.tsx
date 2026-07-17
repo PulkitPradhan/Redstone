@@ -48,7 +48,7 @@ export default function Footer() {
             </p>
             <p className={styles.contactItem}>
               <strong>Email:</strong><br/>
-              <a href="mailto:infor@redstonedrivingschool.com">infor@redstonedrivingschool.com</a>
+              <a href="mailto:info@redstonedrivingschool.com">info@redstonedrivingschool.com</a>
             </p>
             <p className={styles.contactItem}>
               <strong>Hours:</strong><br/>

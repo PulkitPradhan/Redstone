@@ -2,6 +2,7 @@ import Hero from '@/components/Hero/Hero';
 import FaqAccordion from '@/components/FaqAccordion/FaqAccordion';
 import styles from './page.module.css';
 import { Metadata } from 'next';
+import Link from 'next/link';
 const faqItems = [
   {
     question: "What areas do you serve?",
@@ -10,6 +11,10 @@ const faqItems = [
   {
     question: "Is pick-up and drop-off included?",
     answer: "Yes! We offer free pick-up and drop-off from your home, school, or workplace within our service areas at no extra cost."
+  },
+  {
+    question: "Do you teach Defensive Driving?",
+    answer: "Yes. Defensive driving is a core pillar of our curriculum. Every lesson emphasizes hazard perception, proactive maneuvering, and defensive techniques to ensure you learn how to survive on the road safely."
   },
   {
     question: "What vehicle do you use for lessons?",
@@ -25,7 +30,7 @@ const faqItems = [
   },
   {
     question: "What is your cancellation policy?",
-    answer: "We require a full 24 hours' notice for any lesson cancellations or rescheduling to avoid a cancellation fee."
+    answer: "We require a full 24 hours&apos; notice for any lesson cancellations or rescheduling to avoid a cancellation fee."
   },
   {
     question: "What payment methods do you accept?",
@@ -33,7 +38,7 @@ const faqItems = [
   },
   {
     question: "How do I book a lesson?",
-    answer: <>It's easy! You can <a href="tel:403-763-9365">Call or Text us at 403-763-9365</a>, email us at <a href="mailto:infor@redstonedrivingschool.com">infor@redstonedrivingschool.com</a>, or use the form on our <a href="/contact">Contact Page</a>.</>
+    answer: <>It&apos;s easy! You can <a href="tel:403-763-9365">Call or Text us at 403-763-9365</a>, email us at <a href="mailto:info@redstonedrivingschool.com">info@redstonedrivingschool.com</a>, or use the form on our <Link href="/contact">Contact Page</Link>.</>
   }
 ];
 
@@ -58,27 +63,17 @@ export default function ReviewsFaq() {
           </div>
           
           <div className={styles.testiGrid}>
-            <div className={styles.testiCard}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.testiText}>
-                [Placeholder for Testimonial 1. "Sunny was so patient and helped me pass on my first try!"]
-              </p>
-              <div className={styles.testiAuthor}>- Student Name</div>
-            </div>
-            <div className={styles.testiCard}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.testiText}>
-                [Placeholder for Testimonial 2. "Great instructor, very calm, and the free pick-up was so convenient."]
-              </p>
-              <div className={styles.testiAuthor}>- Student Name</div>
-            </div>
-            <div className={styles.testiCard}>
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.testiText}>
-                [Placeholder for Testimonial 3. "I felt totally prepared for my road test. Highly recommend Redstone!"]
-              </p>
-              <div className={styles.testiAuthor}>- Student Name</div>
-            </div>
+            {[
+              { text: "I enjoyed and benefited from my time with Redstone Driving School's online courses, and I would recommend them to anyone who is looking to increase their knowledge before getting behind the wheel. The modules were clear, flexible, and easy to work with. Before taking the Basic course, I had driven only a handful of times and was anxious. After the online lessons, I was much more confident.", author: "Veronica Moreau" },
+              { text: "From the moment I registered for their online program till I completed the course, it was a smooth experience. I took their basic insurance reduction program online. The content is very knowledgeable and has amazing coaching elements. It focuses on areas which need improvement. Highly recommended!", author: "Sundaraj Lakshmipathy" },
+              { text: "Five stars definitely not adequate to give Redstone their due! Great experience; the online portal had me feeling comfortable and relaxed. I knew that I would do well on my written test because I felt well-prepared. The course gave many bits of information and advice which are not in the standard learner's manual. I highly recommend Redstone - it's a first class online driving school.", author: "Phillip Noel" }
+            ].map((testi, i) => (
+              <div key={testi.author} className={styles.testiCard}>
+                <div className={styles.quoteIcon}>&quot;</div>
+                <p className={styles.testiText}>{testi.text}</p>
+                <div className={styles.testiAuthor}>- {testi.author}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

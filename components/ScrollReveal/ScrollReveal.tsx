@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { ReactNode } from 'react';
 
 interface ScrollRevealProps {
@@ -11,6 +11,7 @@ interface ScrollRevealProps {
   className?: string;
   style?: React.CSSProperties;
 }
+const EMPTY_STYLE: React.CSSProperties = {};
 
 export default function ScrollReveal({
   children,
@@ -18,10 +19,10 @@ export default function ScrollReveal({
   yOffset = 50,
   duration = 0.8,
   className = '',
-  style = {},
+  style = EMPTY_STYLE,
 }: ScrollRevealProps) {
   return (
-    <motion.div
+    <m.div
       className={className}
       style={style}
       initial={{ opacity: 0, y: yOffset }}
@@ -36,6 +37,6 @@ export default function ScrollReveal({
       }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

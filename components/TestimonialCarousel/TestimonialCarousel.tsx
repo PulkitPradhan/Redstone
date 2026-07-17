@@ -47,8 +47,8 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         ref={scrollRef} 
         onScroll={checkScroll}
       >
-        {testimonials.map((testi, i) => (
-          <div key={i} className={styles.carouselSlide}>
+        {testimonials.map((testi) => (
+          <div key={testi.author} className={styles.carouselSlide}>
             <div className={styles.testiCard}>
               <div className={styles.quoteIcon}>"</div>
               <p className={styles.testiText}>{testi.text}</p>
@@ -60,6 +60,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
       
       <div className={styles.controls}>
         <button 
+          type="button"
           onClick={() => scroll('left')} 
           disabled={!canScrollLeft}
           className={styles.controlBtn}
@@ -68,6 +69,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
           <ChevronLeft size={24} />
         </button>
         <button 
+          type="button"
           onClick={() => scroll('right')} 
           disabled={!canScrollRight}
           className={styles.controlBtn}

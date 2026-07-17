@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import {  m, useScroll, useTransform  } from "framer-motion";
 import styles from './Hero.module.css';
 
 interface HeroProps {
@@ -44,9 +44,9 @@ export default function Hero({
 
   return (
     <section className={styles.hero}>
-      <motion.div 
+      <m.div 
         className={styles.parallaxContainer}
-        style={{ y }}
+        style={{ y, scale: 1.15 }}
       >
         {images.map((url, idx) => (
           <div
@@ -58,7 +58,7 @@ export default function Hero({
             }}
           />
         ))}
-      </motion.div>
+      </m.div>
       <div className={styles.overlay}></div>
       <div className={styles.content}>
         <h1 className={styles.title}>{title}</h1>

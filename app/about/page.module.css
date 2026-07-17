@@ -31,6 +31,7 @@
 .carImagePlaceholder {
   width: 100%;
   aspect-ratio: 16/9;
+  position: relative;
   background-color: #ddd;
   border-radius: 8px;
   display: flex;

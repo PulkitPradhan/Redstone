@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {  m, AnimatePresence  } from "framer-motion";
 import Image from 'next/image';
 import { useLoading } from '@/components/LoadingContext';
 import styles from './SiteLoader.module.css';
@@ -25,14 +25,14 @@ export default function SiteLoader() {
   return (
     <AnimatePresence>
       {isLoading && (
-        <motion.div
+        <m.div
           className={styles.loaderContainer}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <div className={styles.logoWrapper}>
-            <motion.div
+            <m.div
               layoutId="site-logo"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -46,9 +46,9 @@ export default function SiteLoader() {
                 className={styles.logo}
                 priority
               />
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

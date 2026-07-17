@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {  m, AnimatePresence  } from "framer-motion";
 import { ChevronDown } from 'lucide-react';
 import styles from './FaqAccordion.module.css';
 
@@ -26,24 +26,24 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
       {items.map((item, index) => {
         const isOpen = openIndex === index;
         return (
-          <div key={index} className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}>
-            <button 
+          <div key={item.question} className={`${styles.accordionItem} ${isOpen ? styles.open : ''}`}>
+            <button type="button" 
               className={styles.accordionHeader} 
               onClick={() => toggleItem(index)}
               aria-expanded={isOpen}
             >
               <span className={styles.question}>{item.question}</span>
-              <motion.div
+              <m.div
                 animate={{ rotate: isOpen ? 180 : 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className={styles.iconContainer}
               >
                 <ChevronDown size={20} strokeWidth={2.5} />
-              </motion.div>
+              </m.div>
             </button>
             <AnimatePresence initial={false}>
               {isOpen && (
-                <motion.div
+                <m.div
                   key="content"
                   initial="collapsed"
                   animate="open"
@@ -57,7 +57,7 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
                   <div className={styles.accordionContent}>
                     {item.answer}
                   </div>
-                </motion.div>
+                </m.div>
               )}
             </AnimatePresence>
           </div>

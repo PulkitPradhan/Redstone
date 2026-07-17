@@ -6,6 +6,7 @@
   z-index: 1000;
   background-color: var(--color-neutral);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid var(--color-secondary);
 }
 
 .floatingContact {
@@ -42,7 +43,7 @@
 }
 
 .navbar {
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .navInner {
@@ -99,8 +100,13 @@
   transition: width 0.3s;
 }
 
-.navLinks a:not(.btn-primary):hover::after {
+.navLinks a:not(.btn-primary):hover::after,
+.navLinks a:not(.btn-primary).active::after {
   width: 100%;
+}
+
+.navLinks a:not(.btn-primary).active {
+  color: var(--color-primary);
 }
 
 .hamburger {

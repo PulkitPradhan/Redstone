@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import sanitizeHtml from 'sanitize-html';
 import { Inter, Poppins, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
+import { LazyMotion, domAnimation } from 'framer-motion';
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import { LoadingProvider } from "@/components/LoadingContext";
@@ -86,7 +88,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: sanitizeHtml(JSON.stringify({
               "@context": "https://schema.org",
               "@type": "DrivingSchool",
               "name": "Redstone Driving School",
@@ -106,19 +108,21 @@ export default function RootLayout({
                 "ratingValue": "5.0",
                 "reviewCount": "84"
               }
-            })
+            }))
           }}
         />
       </head>
       <body>
-        <LoadingProvider>
+        <LazyMotion features={domAnimation}>
+          <LoadingProvider>
           <SiteLoader />
           <SmoothScroll>
             <Navbar />
             <main>{children}</main>
             <Footer />
           </SmoothScroll>
-        </LoadingProvider>
+          </LoadingProvider>
+        </LazyMotion>
       </body>
     </html>
   );

@@ -5,7 +5,8 @@ import { LayoutGroup } from 'framer-motion';
 
 const LoadingContext = createContext({ 
   isLoading: true, 
-  setIsLoading: (_: boolean) => {} 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  setIsLoading: (_value: boolean) => {} 
 });
 
 export const useLoading = () => useContext(LoadingContext);
@@ -21,8 +22,10 @@ export const LoadingProvider = ({ children }: { children: React.ReactNode }) => 
     return () => clearTimeout(timer);
   }, []);
 
+  const value = React.useMemo(() => ({ isLoading, setIsLoading }), [isLoading, setIsLoading]);
+
   return (
-    <LoadingContext.Provider value={{ isLoading, setIsLoading }}>
+    <LoadingContext.Provider value={value}>
       <LayoutGroup>
         {children}
       </LayoutGroup>

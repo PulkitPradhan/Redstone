@@ -23,6 +23,7 @@
 .welcomeImage {
   width: 100%;
   aspect-ratio: 4/3;
+  position: relative;
   background-color: var(--color-accent);
   border-radius: 8px;
   display: flex;
@@ -81,6 +82,8 @@
 
 .instructorImage {
   width: 100%;
+  aspect-ratio: 4/3;
+  position: relative;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);

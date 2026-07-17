@@ -2,15 +2,21 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import {  m  } from "framer-motion";
 import { useLoading } from '@/components/LoadingContext';
 import styles from './Navbar.module.css';
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
   const { isLoading } = useLoading();
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkScrollTop = () => {
@@ -24,9 +30,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', checkScrollTop);
   }, [showScroll]);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+
 
   return (
     <>
@@ -35,7 +39,7 @@ export default function Navbar() {
           <div className={styles.navInner}>
             <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
               {!isLoading && (
-                <motion.div layoutId="site-logo" className={styles.logoImageWrapper}>
+                <m.div layoutId="site-logo" className={styles.logoImageWrapper}>
                   <Image 
                     src="/logo.webp" 
                     alt="Redstone Driving School Logo" 
@@ -43,14 +47,14 @@ export default function Navbar() {
                     height={52}
                     style={{ objectFit: 'contain' }}
                   />
-                </motion.div>
+                </m.div>
               )}
               <div className={styles.logoPlaceholder}>
                 Redstone Driving School
               </div>
             </Link>
 
-            <button 
+            <button type="button" 
               className={styles.hamburger} 
               onClick={() => setIsOpen(!isOpen)} 
               aria-label="Toggle menu"
@@ -61,11 +65,11 @@ export default function Navbar() {
             </button>
             
             <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`}>
-              <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-              <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
-              <li><Link href="/courses" onClick={() => setIsOpen(false)}>Courses & Pricing</Link></li>
-              <li><Link href="/reviews-faq" onClick={() => setIsOpen(false)}>Reviews & FAQ</Link></li>
-              <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact</Link></li>
+              <li><Link href="/" className={pathname === '/' ? styles.active : ''} onClick={() => setIsOpen(false)}>Home</Link></li>
+              <li><Link href="/about" className={pathname === '/about' ? styles.active : ''} onClick={() => setIsOpen(false)}>About</Link></li>
+              <li><Link href="/courses" className={pathname === '/courses' ? styles.active : ''} onClick={() => setIsOpen(false)}>Courses & Pricing</Link></li>
+              <li><Link href="/reviews-faq" className={pathname === '/reviews-faq' ? styles.active : ''} onClick={() => setIsOpen(false)}>Reviews & FAQ</Link></li>
+              <li><Link href="/contact" className={pathname === '/contact' ? styles.active : ''} onClick={() => setIsOpen(false)}>Contact</Link></li>
               <li>
                 <Link href="/registration" className="btn-primary" onClick={() => setIsOpen(false)}>Registration</Link>
               </li>
@@ -76,11 +80,11 @@ export default function Navbar() {
 
       <div className={styles.floatingContact}>
         {showScroll && (
-          <button onClick={scrollToTop} className={styles.floatingIcon} aria-label="Scroll to Top" style={{ backgroundColor: '#000000' }}>
+          <button type="button" onClick={scrollToTop} className={styles.floatingIcon} aria-label="Scroll to Top" style={{ backgroundColor: '#000000' }}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
           </button>
         )}
-        <a href="mailto:infor@redstonedrivingschool.com" className={styles.floatingIcon} aria-label="Email Us">
+        <a href="mailto:info@redstonedrivingschool.com" className={styles.floatingIcon} aria-label="Email Us">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
         <a href="tel:403-763-9365" className={styles.floatingIcon} aria-label="Call Us">

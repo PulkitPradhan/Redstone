@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Hero from '@/components/Hero/Hero';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 import ScrollParallax from '@/components/ScrollReveal/ScrollParallax';
@@ -6,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | Redstone Driving School',
-  description: 'Meet Sukhsimran "Sunny" Seera, a certified driving instructor in Calgary with over 4 years of experience.',
+  description: 'Meet Sukhsimran "Sunny&quot; Seera, a certified driving instructor in Calgary with over 4 years of experience.',
 };
 
 export default function About() {
@@ -24,12 +25,14 @@ export default function About() {
             <div className={styles.imageColumn}>
               <ScrollReveal yOffset={60}>
                 <ScrollParallax offset={30} className={styles.imagePlaceholder} style={{ overflow: 'hidden', padding: 0 }}>
-                  <img src="/training_car.png" alt="Redstone Training Car" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', display: 'block'}} />
+                  
+                  <Image src="/training_car.png" alt="Redstone Training Car" fill style={{objectFit: 'cover', display: 'block', transform: 'scale(1.15)'}} sizes="(max-width: 768px) 100vw, 50vw" />
                 </ScrollParallax>
               </ScrollReveal>
               <ScrollReveal yOffset={60} delay={0.2}>
                 <ScrollParallax offset={20} className={styles.carImagePlaceholder} style={{ overflow: 'hidden', padding: 0 }}>
-                  <img src="/hero_slide_2.png" alt="Redstone Fleet" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', display: 'block'}} />
+                  
+                  <Image src="/hero_slide_2.png" alt="Redstone Fleet" fill style={{objectFit: 'cover', display: 'block', transform: 'scale(1.15)'}} sizes="(max-width: 768px) 100vw, 50vw" />
                 </ScrollParallax>
               </ScrollReveal>
             </div>
@@ -38,10 +41,10 @@ export default function About() {
               <ScrollReveal>
                 <h2>Meet Your Instructor</h2>
                 <p>
-                  Hello! I am Sukhsimran "Sunny" Seera, the owner and lead instructor at Redstone Driving School. Redstone is a hub of trained professionals backed by more than three decades of rich experience. We are known for preparing convinced, trained, and adept drivers by instilling the utmost confidence in them through our comprehensive online classes and calm, expert in-car instruction.
+                  Hello! I am Sukhsimran &quot;Sunny&quot; Seera, the owner and lead instructor at Redstone Driving School. Redstone Driving School is a hub of trained professionals, backed by more than a decade of rich experience. We are known for preparing safe, adept drivers by instilling the utmost confidence in them through our comprehensive online classes and calm, expert in-car instruction.
                 </p>
                 <p>
-                  Our aim is to build professional drivers through safe driving practices. We provide a complete learning experience—from mastering the rules of the road online at home, to getting behind the wheel and learning exactly how to drive safely in real-world conditions.
+                  Our aim is to build professional drivers through safe, proactive driving practices. We provide a complete learning experience—from mastering the rules of the road online at home, to getting behind the wheel and learning exactly how to implement strict defensive driving techniques in real-world conditions.
                 </p>
               </ScrollReveal>
               
@@ -75,7 +78,7 @@ export default function About() {
                 <div className={styles.philosophyBox}>
                   <h3>My Teaching Philosophy</h3>
                   <p style={{marginBottom: 0}}>
-                    "I believe that learning to drive theoretically shouldn't be stressful. My goal is to provide a clear, comprehensive online environment where students can learn at their own pace. Whether you're preparing for your learner's permit or brushing up on rules of the road, I tailor our curriculum to help you succeed and drive safely for life."
+                    &quot;I believe that learning to drive theoretically shouldn&apos;t be stressful. My goal is to provide a clear, comprehensive online environment where students can learn at their own pace. Whether you&apos;re preparing for your learner&apos;s permit or brushing up on rules of the road, I tailor our curriculum to help you succeed and drive safely for life.&quot;
                   </p>
                 </div>
               </ScrollReveal>

@@ -1,10 +1,12 @@
+import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import Hero from '@/components/Hero/Hero';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
 import ScrollParallax from '@/components/ScrollReveal/ScrollParallax';
 import TestimonialCarousel from '@/components/TestimonialCarousel/TestimonialCarousel';
 import styles from './page.module.css';
-import { Award, UserCheck, Users, BookOpen, Smile, Calendar, Map, Lightbulb, ShieldCheck, SprayCan, CheckCircle2 } from 'lucide-react';
+import { Award, UserCheck, Users, BookOpen, Smile, Map, Lightbulb, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -31,7 +33,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Hi, I'm Sukhsimran "Sunny" Seera. Redstone is a hub of trained professionals backed by more than three decades of rich experience. We are known for preparing convinced, trained, and adept drivers by instilling the utmost confidence in them through our comprehensive online classes and expert, hands-on in-car instruction.
+                  Hi, I&apos;m Sukhsimran &quot;Sunny&quot; Seera. Redstone Driving School is a hub of trained professionals, backed by more than a decade of rich experience. We are known for preparing safe, adept drivers by instilling the utmost confidence in them through our comprehensive online classes and expert, hands-on in-car instruction.
                 </p>
                 <p>
                   Our aim is to build professional drivers through safe driving practices. We provide a complete learning experience—from mastering the rules of the road online at home, to getting behind the wheel and learning exactly how to drive safely in real-world conditions.
@@ -45,7 +47,7 @@ export default function Home() {
             </div>
             <div className={styles.welcomeImage}>
               <ScrollParallax offset={40} className={styles.welcomeImageParallaxWrapper} style={{width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                <img src="/online_learning_hero.png" alt="Online Driving Course" style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px', transform: 'scale(1.15)'}} />
+                <Image src="/online_learning_hero.png" alt="Online Driving Course" fill style={{objectFit: 'cover', borderRadius: '8px', transform: 'scale(1.15)'}} sizes="(max-width: 768px) 100vw, 50vw" />
               </ScrollParallax>
             </div>
           </div>
@@ -72,7 +74,7 @@ export default function Home() {
               { icon: <ShieldCheck size={36} strokeWidth={1.5} />, title: 'Advanced Defensive Driving Techniques' }
             ].map((feature, i) => (
               <ScrollReveal 
-                key={i} 
+                key={feature.title} 
                 delay={i * 0.1} 
               >
                 <div className={styles.featureCard}>
@@ -92,12 +94,12 @@ export default function Home() {
             <ScrollReveal className={styles.instructorContent}>
               <h2>Expert In-Car Instruction</h2>
               <p>
-                Our driving lessons aren't just about passing a test—they're about building lifelong skills for the road. 
+                Our driving lessons aren&apos;t just about passing a test—they&apos;re about building lifelong skills for the road. 
                 With patient, certified instructors by your side, you will learn defensive driving techniques, 
                 hazard perception, and the confidence needed to handle any driving situation safely.
               </p>
               <p>
-                Whether you're a complete beginner or looking to refresh your skills, our tailored in-car sessions 
+                Whether you&apos;re a complete beginner or looking to refresh your skills, our tailored in-car sessions 
                 are designed to make you a confident and capable driver.
               </p>
               <Link href="/about" className="btn-secondary" style={{ marginTop: '1rem', display: 'inline-block' }}>Meet Your Instructor</Link>
@@ -105,7 +107,9 @@ export default function Home() {
             
             <ScrollReveal delay={0.2}>
               <div className={styles.instructorImage}>
-                <img src="/instructor_teaching.png" alt="Instructor teaching driving" style={{width: '100%', height: 'auto', display: 'block'}} />
+                <ScrollParallax offset={30} style={{ overflow: 'hidden', padding: 0 }}>
+                  <Image src="/instructor_teaching.png" alt="Instructor teaching driving" fill style={{objectFit: 'cover', display: 'block', transform: 'scale(1.15)'}} sizes="(max-width: 768px) 100vw, 50vw" />
+                </ScrollParallax>
               </div>
             </ScrollReveal>
           </div>
@@ -145,7 +149,7 @@ export default function Home() {
               <Link href="/registration" className="btn-primary" style={{ marginBottom: '2rem' }}>Enroll Now</Link>
               <div className={styles.recommendedBox}>
                 <h4>RECOMMENDED IF</h4>
-                <p>You're reasonably comfortable as a driver and have some experience</p>
+                <p>You&apos;re reasonably comfortable as a driver and have some experience</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2} className={styles.priceCard} style={{border: '2px solid var(--color-primary)'}}>

@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { useRef, ReactNode } from 'react';
 
 interface ScrollParallaxProps {
@@ -9,12 +9,13 @@ interface ScrollParallaxProps {
   className?: string;
   style?: React.CSSProperties;
 }
+const EMPTY_STYLE: React.CSSProperties = {};
 
 export default function ScrollParallax({
   children,
   offset = 100,
   className = '',
-  style = {},
+  style = EMPTY_STYLE,
 }: ScrollParallaxProps) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -25,10 +26,10 @@ export default function ScrollParallax({
   const y = useTransform(scrollYProgress, [0, 1], [-offset, offset]);
 
   return (
-    <div ref={ref} className={className} style={{ overflow: 'hidden', ...style }}>
-      <motion.div style={{ y, width: '100%', height: '100%' }}>
+    <div ref={ref} className={className} style={{ overflow: 'hidden', width: '100%', height: '100%', ...style }}>
+      <m.div style={{ y, width: '100%', height: '100%', position: 'relative' }}>
         {children}
-      </motion.div>
+      </m.div>
     </div>
   );
 }

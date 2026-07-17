@@ -24,7 +24,7 @@ Subject: ${data.subject}
 Message: ${data.message}`;
 
     const encodedMessage = encodeURIComponent(message);
-    const phoneNumber = '13688873300'; // Test number: +1 (368) 887-3300
+    const phoneNumber = '14037639365'; // Redstone Driving School Number
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     window.open(whatsappUrl, '_blank');
@@ -37,7 +37,7 @@ Message: ${data.message}`;
     <>
       <Hero 
         title="Contact Us"
-        subtitle="Have a question? We're here to help. Reach out to us today."
+        subtitle="Have a question about our defensive driving curriculum? We're here to help. Reach out to us today."
         imageUrl="/training_car.png"
       />
 
@@ -51,7 +51,7 @@ Message: ${data.message}`;
             </div>
             <div className={styles.infoItem}>
               <h4>Email Us</h4>
-              <a href="mailto:infor@redstonedrivingschool.com">infor@redstonedrivingschool.com</a>
+              <a href="mailto:info@redstonedrivingschool.com">info@redstonedrivingschool.com</a>
             </div>
             <div className={styles.infoItem}>
               <h4>Service Area</h4>
@@ -71,14 +71,14 @@ Message: ${data.message}`;
               <div className={styles.row}>
                 <div className={styles.col}>
                   <div className={styles.formGroup}>
-                    <label>Full Name <span className={styles.required}>*</span></label>
-                    <input type="text" name="name" required />
+                    <label htmlFor="name">Full Name <span className={styles.required}>*</span></label>
+                    <input id="name" type="text" name="name" required />
                   </div>
                 </div>
                 <div className={styles.col}>
                   <div className={styles.formGroup}>
-                    <label>Email Address <span className={styles.required}>*</span></label>
-                    <input type="email" name="email" required />
+                    <label htmlFor="email">Email Address <span className={styles.required}>*</span></label>
+                    <input id="email" type="email" name="email" required />
                   </div>
                 </div>
               </div>
@@ -86,21 +86,21 @@ Message: ${data.message}`;
               <div className={styles.row}>
                 <div className={styles.col}>
                   <div className={styles.formGroup}>
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" />
+                    <label htmlFor="phone">Phone Number</label>
+                    <input id="phone" type="tel" name="phone" />
                   </div>
                 </div>
                 <div className={styles.col}>
                   <div className={styles.formGroup}>
-                    <label>Subject</label>
-                    <input type="text" name="subject" />
+                    <label htmlFor="subject">Subject</label>
+                    <input id="subject" type="text" name="subject" />
                   </div>
                 </div>
               </div>
 
               <div className={styles.formGroup}>
-                <label>Message <span className={styles.required}>*</span></label>
-                <textarea name="message" rows={5} required></textarea>
+                <label htmlFor="message">Message <span className={styles.required}>*</span></label>
+                    <textarea id="message" name="message" rows={5} required></textarea>
               </div>
 
               <button type="submit" className={`btn-primary ${styles.submitBtn}`} disabled={status === 'loading'} style={{ backgroundColor: '#E4203C', color: 'white' }}>

@@ -29,7 +29,7 @@ export default function Courses() {
           <div className={styles.courseList}>
             <div id="basic" className={styles.courseItem}>
               <h3>Basic Course</h3>
-              <p>RECOMMENDED IF: You're reasonably comfortable as a driver and have some experience. This package includes 15 Hours of Online Classes and 10 Hours of In-Car driving instruction.</p>
+              <p>RECOMMENDED IF: You&apos;re reasonably comfortable as a driver and have some experience. This package includes 15 Hours of Online Classes and 10 Hours of In-Car driving instruction.</p>
             </div>
             
             <div id="premium" className={styles.courseItem}>
@@ -44,9 +44,19 @@ export default function Courses() {
             
             <div id="elite" className={styles.courseItem}>
               <h3>Elite Course</h3>
-              <p>RECOMMENDED IF: You're living in remote towns or cities from Calgary like NANTON, STRATHMORE, CROSSFIELD, COCHRANE, BRAGG CREEK, PRIDDIS, MILLARVILLE, DIAMOND VALLEY, LONGVIEW, BLACKIE AND so on. This package includes 15 Hours of Online Classes and 10 Hours of In-Car driving instruction, tailored for rural scenarios.</p>
+              <p>RECOMMENDED IF: You&apos;re living in remote towns or cities from Calgary like NANTON, STRATHMORE, CROSSFIELD, COCHRANE, BRAGG CREEK, PRIDDIS, MILLARVILLE, DIAMOND VALLEY, LONGVIEW, BLACKIE AND so on. This package includes 15 Hours of Online Classes and 10 Hours of In-Car driving instruction, tailored for rural scenarios.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section style={{ backgroundColor: 'var(--color-primary)', color: '#fff', padding: '4rem 1rem', textAlign: 'center' }}>
+        <div className={styles.container} style={{ maxWidth: '800px' }}>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '1.5rem', fontFamily: 'var(--font-heading)' }}>Master Defensive Driving</h2>
+          <p style={{ fontSize: '1.2rem', lineHeight: '1.6', marginBottom: '2rem' }}>
+            We don&apos;t just teach you how to pass your test—we teach you how to survive on the road. 
+            <strong> All of our programs heavily emphasize advanced Defensive Driving techniques</strong>, ensuring you learn hazard perception, proactive vehicle control, and safe decision-making in any weather condition.
+          </p>
         </div>
       </section>
 
@@ -67,7 +77,7 @@ export default function Courses() {
               <Link href="/registration" className="btn-primary" style={{ marginBottom: '2rem' }}>Enroll Now</Link>
               <div className={styles.recommendedBox}>
                 <h4>RECOMMENDED IF</h4>
-                <p>You're reasonably comfortable as a driver and have some experience</p>
+                <p>You&apos;re reasonably comfortable as a driver and have some experience</p>
               </div>
             </div>
 
