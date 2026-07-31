@@ -31,25 +31,51 @@ export default function Navbar() {
   }, [showScroll]);
 
 
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  useEffect(() => {
+    if (!isLoading) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 800); // Wait for the 0.8s transition to finish
+      return () => clearTimeout(timer);
+    }
+  }, [isLoading]);
 
   return (
     <>
-      <header className={styles.header}>
+      <header 
+        className={styles.header} 
+        style={{ 
+          zIndex: (isLoading || isTransitioning) ? 10001 : 1000,
+          backgroundColor: isLoading ? 'transparent' : 'var(--color-neutral)',
+          boxShadow: isLoading ? 'none' : '0 2px 10px rgba(0, 0, 0, 0.1)',
+          borderBottom: isLoading ? 'none' : '4px solid var(--color-secondary)',
+          pointerEvents: isLoading ? 'none' : 'all',
+          transition: 'background-color 0.8s ease, box-shadow 0.8s ease, border-bottom 0.8s ease'
+        }}
+      >
         <nav className={styles.navbar}>
           <div className={styles.navInner}>
-            <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
-              {!isLoading && (
-                <m.div layoutId="site-logo" className={styles.logoImageWrapper}>
-                  <Image 
-                    src="/logo.webp" 
-                    alt="Redstone Driving School Logo" 
-                    width={52} 
-                    height={52}
-                    style={{ objectFit: 'contain' }}
-                  />
-                </m.div>
-              )}
-              <div className={styles.logoPlaceholder}>
+            <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)} style={{ pointerEvents: isLoading ? 'none' : 'all' }}>
+              <m.div 
+                layout
+                className={isLoading ? styles.splashLogo : styles.navbarLogo}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Image 
+                  src="/logo.webp" 
+                  alt="Redstone Driving School Logo" 
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  sizes={isLoading ? "173px" : "52px"}
+                  priority
+                />
+              </m.div>
+              <div 
+                className={styles.logoPlaceholder}
+                style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.8s ease' }}
+              >
                 Redstone Driving School
               </div>
             </Link>
@@ -58,13 +84,14 @@ export default function Navbar() {
               className={styles.hamburger} 
               onClick={() => setIsOpen(!isOpen)} 
               aria-label="Toggle menu"
+              style={{ opacity: isLoading ? 0 : 1, pointerEvents: isLoading ? 'none' : 'all', transition: 'opacity 0.8s ease' }}
             >
               <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
               <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
               <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
             </button>
             
-            <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`}>
+            <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`} style={{ opacity: isLoading ? 0 : 1, pointerEvents: isLoading ? 'none' : 'all', transition: 'opacity 0.8s ease' }}>
               <li><Link href="/" className={pathname === '/' ? styles.active : ''} onClick={() => setIsOpen(false)}>Home</Link></li>
               <li><Link href="/about" className={pathname === '/about' ? styles.active : ''} onClick={() => setIsOpen(false)}>About</Link></li>
               <li><Link href="/courses" className={pathname === '/courses' ? styles.active : ''} onClick={() => setIsOpen(false)}>Courses & Pricing</Link></li>

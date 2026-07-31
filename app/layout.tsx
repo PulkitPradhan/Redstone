@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import sanitizeHtml from 'sanitize-html';
 import { Inter, Poppins, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
-import { LazyMotion, domAnimation } from 'framer-motion';
+import { LazyMotion, domMax, LayoutGroup } from 'framer-motion';
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
 import { LoadingProvider } from "@/components/LoadingContext";
@@ -113,15 +113,17 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <LazyMotion features={domAnimation}>
-          <LoadingProvider>
-          <SiteLoader />
-          <SmoothScroll>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </SmoothScroll>
-          </LoadingProvider>
+        <LazyMotion features={domMax}>
+          <LayoutGroup>
+            <LoadingProvider>
+              <SiteLoader />
+              <Navbar />
+              <SmoothScroll>
+                <main>{children}</main>
+                <Footer />
+              </SmoothScroll>
+            </LoadingProvider>
+          </LayoutGroup>
         </LazyMotion>
       </body>
     </html>

@@ -61,10 +61,29 @@
   text-decoration: none;
 }
 
-.logoImageWrapper {
+.splashLogo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 173px;
+  height: 173px;
+  z-index: 10001;
+  /* Use margins to center instead of transform so layout animation is flawless */
+  margin-top: -86.5px;
+  margin-left: -86.5px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.navbarLogo {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .logoPlaceholder {
