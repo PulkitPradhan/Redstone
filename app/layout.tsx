@@ -5,8 +5,6 @@ import Navbar from "@/components/Navbar/Navbar";
 import { LazyMotion, domMax, LayoutGroup } from 'framer-motion';
 import Footer from "@/components/Footer/Footer";
 import SmoothScroll from "@/components/SmoothScroll/SmoothScroll";
-import { LoadingProvider } from "@/components/LoadingContext";
-import SiteLoader from "@/components/SiteLoader/SiteLoader";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,12 +32,15 @@ export const metadata: Metadata = {
     template: "%s | Redstone Driving School",
   },
   description:
-    "Learn to drive with confidence. Personalized, patient instruction from a certified Class 5 instructor serving Calgary, Airdrie, Chestermere & Cochrane. Offering basic to elite online and in-car driving courses.",
+    "Learn to drive with confidence. Personalized, patient instruction from a certified Class 5 instructor serving Calgary, Airdrie, Chestermere, Cochrane, Crossfield, Okotoks & Strathmore. Offering basic to elite online and in-car driving courses.",
   keywords: [
     "Driving School Calgary",
     "Class 5 Driving Instructor",
     "Driving Lessons Airdrie",
     "Driving Lessons Chestermere",
+    "Driving Lessons Cochrane",
+    "Driving Lessons Okotoks",
+    "Driving Lessons Strathmore",
     "Online Driving Course Alberta",
     "Redstone Driving School",
     "Insurance Reduction Course",
@@ -52,7 +53,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://redstonedriving.com",
     title: "Redstone Driving School | Calgary's Trusted Driving School",
-    description: "Learn to drive with confidence. Personalized, patient instruction from a certified Class 5 instructor serving Calgary, Airdrie, Chestermere & Cochrane.",
+    description: "Learn to drive with confidence. Personalized, patient instruction from a certified Class 5 instructor serving Calgary, Airdrie, Chestermere, Cochrane, Crossfield, Okotoks & Strathmore.",
     siteName: "Redstone Driving School",
   },
   twitter: {
@@ -72,8 +73,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/logo.webp',
-    apple: '/logo.webp',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 };
 
@@ -92,7 +93,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "DrivingSchool",
               "name": "Redstone Driving School",
-              "image": "https://redstonedriving.com/logo.webp",
+              "image": "https://redstonedriving.com/logo.png",
               "@id": "https://redstonedriving.com",
               "url": "https://redstonedriving.com",
               "telephone": "403-763-9365",
@@ -115,14 +116,11 @@ export default function RootLayout({
       <body>
         <LazyMotion features={domMax}>
           <LayoutGroup>
-            <LoadingProvider>
-              <SiteLoader />
-              <Navbar />
-              <SmoothScroll>
-                <main>{children}</main>
-                <Footer />
-              </SmoothScroll>
-            </LoadingProvider>
+            <Navbar />
+            <SmoothScroll>
+              <main>{children}</main>
+              <Footer />
+            </SmoothScroll>
           </LayoutGroup>
         </LazyMotion>
       </body>

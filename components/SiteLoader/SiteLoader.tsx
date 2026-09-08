@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect } from 'react';
-import {  m, AnimatePresence, usePresence  } from "framer-motion";
-import Image from 'next/image';
+import { m, AnimatePresence } from "framer-motion";
 import { useLoading } from '@/components/LoadingContext';
 import styles from './SiteLoader.module.css';
 

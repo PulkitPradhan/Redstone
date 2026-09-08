@@ -10,8 +10,9 @@ export default function CourseSelectionSection() {
           <option value="">Please select an option</option>
           <option value="Basic ($699)">Basic ($699)</option>
           <option value="Premium ($969)">Premium ($969)</option>
-          <option value="Ultimate ($1349)">Ultimate ($1349)</option>
+          <option value="Ultimate ($1249)">Ultimate ($1249)</option>
           <option value="Elite ($899)">Elite ($899)</option>
+          <option value="Brush Up Class - 2 Hours ($140)">Brush Up Class - 2 Hours ($140)</option>
           <option value="---">---</option>
           <option value="One Lesson - 2 Hours ($149)">One Lesson - 2 Hours ($149)</option>
           <option value="On-line Course Only ($100)">On-line Course Only ($100)</option>
@@ -35,7 +36,7 @@ export default function CourseSelectionSection() {
         <div className={styles.col}>
           <div className={styles.formGroup}>
             <fieldset className={styles.radioGroupContainer}>
-              <legend>Opting for an Online 15hrs Course ($100) <span className={styles.required}>*</span></legend>
+              <legend>Opting for an Online 15 Hours Course ($100) <span className={styles.required}>*</span></legend>
               <div className={styles.radioGroup}>
                 <label className={styles.radioLabel}><input type="radio" name="onlineCourse" value="Yes" required /> Yes</label>
                 <label className={styles.radioLabel}><input type="radio" name="onlineCourse" value="No" required /> No</label>

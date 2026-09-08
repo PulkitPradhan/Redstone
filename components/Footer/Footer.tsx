@@ -34,6 +34,9 @@ export default function Footer() {
               <li>Airdrie</li>
               <li>Chestermere</li>
               <li>Cochrane</li>
+              <li>Crossfield</li>
+              <li>Okotoks</li>
+              <li>Strathmore</li>
             </ul>
             <h4 className={styles.colTitle} style={{marginTop: '1.5rem'}}>Payment Methods</h4>
             <p className={styles.desc}>E-Transfer, Cash</p>
@@ -48,7 +51,7 @@ export default function Footer() {
             </p>
             <p className={styles.contactItem}>
               <strong>Email:</strong><br/>
-              <a href="mailto:info@redstonedrivingschool.com">info@redstonedrivingschool.com</a>
+              <a href="mailto:info@redstonedriving.com">info@redstonedriving.com</a>
             </p>
             <p className={styles.contactItem}>
               <strong>Hours:</strong><br/>

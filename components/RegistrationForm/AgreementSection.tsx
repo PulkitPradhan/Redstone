@@ -23,7 +23,7 @@ export default function AgreementSection() {
             • Parents/Guardians must inform the School about any medical, physical, or mental health problems which could directly relate to student performance. Failure to provide this information could be considered negligence.<br />
             • Student must ensure to keep the driving license with them during the class and have to show when requested.<br />
             • The use of tobacco products is not allowed while driving or also riding as a passenger. Students that arrive for a drive session in an intoxicated or drug induced condition will not be allowed to drive and, may be dropped from the course without refund.<br />
-            • All fees are payable in advance before the first training session. All payments can be made using a debit card, cash or e-transfer.<br />
+            • All fees are payable in advance before the first training session. All payments can be made using cash or e-transfer.<br />
             • A fee of $99 will be charged and must be paid before the next class in case of no show by the student or any cancellation or rescheduling within 24 hours of the scheduled class.<br />
             • At least 24 hours’ notice is required before making any change to the existing schedule.<br />
           </p>
@@ -65,8 +65,8 @@ export default function AgreementSection() {
         <fieldset className={styles.radioGroupContainer}>
           <legend>Payment Option <span className={styles.required}>*</span></legend>
           <div className={styles.radioGroup}>
-            <label className={styles.radioLabel}><input type="radio" name="paymentOption" value="Pay Now (Credit Card/Debit Card)" required /> Pay Now (Credit Card/Debit Card)</label>
-            <label className={styles.radioLabel}><input type="radio" name="paymentOption" value="Pay Later (Cash/Cheque/E-transfer)" required /> Pay Later (Cash/Cheque/E-transfer)</label>
+            <label className={styles.radioLabel}><input type="radio" name="paymentOption" value="E-Transfer" required /> E-Transfer</label>
+            <label className={styles.radioLabel}><input type="radio" name="paymentOption" value="Cash" required /> Cash</label>
           </div>
         </fieldset>
       </div>

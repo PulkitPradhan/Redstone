@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     // const resend = new Resend(process.env.RESEND_API_KEY);
     // await resend.emails.send({
     //   from: 'onboarding@resend.dev',
-    //   to: 'info@redstonedrivingschool.com',
+    //   to: 'info@redstonedriving.com',
     //   subject: `New Lead: ${name} - ${course}`,
     //   html: `<p>Name: ${name}</p><p>Phone: ${phone}</p><p>Email: ${email}</p><p>Course: ${course}</p><p>Message: ${message}</p>`
     // });

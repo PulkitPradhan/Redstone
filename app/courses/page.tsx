@@ -44,7 +44,12 @@ export default function Courses() {
             
             <div id="elite" className={styles.courseItem}>
               <h3>Elite Course</h3>
-              <p>RECOMMENDED IF: You&apos;re living in remote towns or cities from Calgary like NANTON, STRATHMORE, CROSSFIELD, COCHRANE, BRAGG CREEK, PRIDDIS, MILLARVILLE, DIAMOND VALLEY, LONGVIEW, BLACKIE AND so on. This package includes 15 Hours of Online Classes and 10 Hours of In-Car driving instruction, tailored for rural scenarios.</p>
+              <p>RECOMMENDED IF: You&apos;re living in remote towns or cities from Calgary like NANTON, STRATHMORE, CROSSFIELD, COCHRANE, BRAGG CREEK, PRIDDIS, MILLARVILLE, DIAMOND VALLEY, LONGVIEW, BLACKIE and so on. This package includes 15 Hours of Online Classes and 10 Hours of In-Car driving instruction, tailored for rural scenarios.</p>
+            </div>
+
+            <div id="brush-up" className={styles.courseItem}>
+              <h3>Brush Up Class</h3>
+              <p>RECOMMENDED IF: You want to refresh specific driving skills, build confidence before a road test, or practice maneuvers like parallel parking, hill parking, and highway driving. This session includes 2 Hours of In-Car driving instruction ($140/class).</p>
             </div>
           </div>
         </div>
@@ -98,7 +103,7 @@ export default function Courses() {
 
             <div className={styles.priceCard}>
               <h3>Ultimate</h3>
-              <div className={styles.price}>$1349</div>
+              <div className={styles.price}>$1249</div>
               <ul className={styles.priceFeatures}>
                 <li><CheckCircle2 size={16} color="#B23A2E" /> 15 Hours In-Class</li>
                 <li><CheckCircle2 size={16} color="#B23A2E" /> 20 Hours in Car</li>
@@ -121,6 +126,20 @@ export default function Courses() {
               <div className={styles.recommendedBox}>
                 <h4>RECOMMENDED IF</h4>
                 <p>You live outside Calgary and want specialized practice for rural routes, highways, and long-distance commuting.</p>
+              </div>
+            </div>
+
+            <div className={styles.priceCard}>
+              <h3>Brush Up Class</h3>
+              <div className={styles.price}>$140 <span style={{fontSize: '1rem', fontWeight: 'normal', color: 'var(--color-text-light)'}}>/ class</span></div>
+              <ul className={styles.priceFeatures}>
+                <li><CheckCircle2 size={16} color="#B23A2E" /> 2 Hours In-Car</li>
+                <li><CheckCircle2 size={16} color="#B23A2E" /> Targeted Skill Refresh</li>
+              </ul>
+              <Link href="/registration" className="btn-primary" style={{ marginBottom: '2rem' }}>Enroll Now</Link>
+              <div className={styles.recommendedBox}>
+                <h4>RECOMMENDED IF</h4>
+                <p>You already have driving knowledge and want a dedicated session to brush up specific skills or prep for a test.</p>
               </div>
             </div>
           </div>

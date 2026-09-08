@@ -50,7 +50,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         {testimonials.map((testi) => (
           <div key={testi.author} className={styles.carouselSlide}>
             <div className={styles.testiCard}>
-              <div className={styles.quoteIcon}>"</div>
+              <div className={styles.quoteIcon}>&quot;</div>
               <p className={styles.testiText}>{testi.text}</p>
               <div className={styles.testiAuthor}>- {testi.author}</div>
             </div>

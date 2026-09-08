@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About Us | Redstone Driving School',
-  description: 'Meet Sukhsimran "Sunny&quot; Seera, a certified driving instructor in Calgary with over 4 years of experience.',
+  description: 'Learn about Redstone Driving School, offering certified driving instruction in Calgary and surrounding areas.',
 };
 
 export default function About() {
@@ -41,7 +41,7 @@ export default function About() {
               <ScrollReveal>
                 <h2>Meet Your Instructor</h2>
                 <p>
-                  Hello! I am Sukhsimran &quot;Sunny&quot; Seera, the owner and lead instructor at Redstone Driving School. Redstone Driving School is a hub of trained professionals, backed by more than a decade of rich experience. We are known for preparing safe, adept drivers by instilling the utmost confidence in them through our comprehensive online classes and calm, expert in-car instruction.
+                  Redstone Driving School is a hub of trained professionals, backed by more than a decade of rich experience. We are known for preparing safe, adept drivers by instilling the utmost confidence in them through our comprehensive online classes and calm, expert in-car instruction.
                 </p>
                 <p>
                   Our aim is to build professional drivers through safe, proactive driving practices. We provide a complete learning experience—from mastering the rules of the road online at home, to getting behind the wheel and learning exactly how to implement strict defensive driving techniques in real-world conditions.

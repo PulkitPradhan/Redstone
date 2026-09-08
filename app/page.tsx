@@ -1,5 +1,4 @@
 import Image from 'next/image';
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import Hero from '@/components/Hero/Hero';
 import ScrollReveal from '@/components/ScrollReveal/ScrollReveal';
@@ -12,7 +11,7 @@ export default function Home() {
   return (
     <>
       <Hero 
-        title="Redstone Driving School - Expert In-Car Lessons & Online Education"
+        title="Redstone Driving School - Professional Driving Lessons & Online Education"
         subtitle="Master the road with our comprehensive online modules and calm, professional in-car driving lessons. Build confidence behind the wheel."
         ctaText="View Our Courses"
         ctaLink="/courses"
@@ -33,7 +32,7 @@ export default function Home() {
               </ScrollReveal>
               <ScrollReveal delay={0.1}>
                 <p>
-                  Hi, I&apos;m Sukhsimran &quot;Sunny&quot; Seera. Redstone Driving School is a hub of trained professionals, backed by more than a decade of rich experience. We are known for preparing safe, adept drivers by instilling the utmost confidence in them through our comprehensive online classes and expert, hands-on in-car instruction.
+                  Redstone Driving School is a hub of trained professionals, backed by more than a decade of rich experience. We are known for preparing safe, adept drivers by instilling the utmost confidence in them through our comprehensive online classes and expert, hands-on in-car instruction.
                 </p>
                 <p>
                   Our aim is to build professional drivers through safe driving practices. We provide a complete learning experience—from mastering the rules of the road online at home, to getting behind the wheel and learning exactly how to drive safely in real-world conditions.
@@ -92,7 +91,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.instructorGrid}>
             <ScrollReveal className={styles.instructorContent}>
-              <h2>Expert In-Car Instruction</h2>
+              <h2>Professional In-Car Instruction</h2>
               <p>
                 Our driving lessons aren&apos;t just about passing a test—they&apos;re about building lifelong skills for the road. 
                 With patient, certified instructors by your side, you will learn defensive driving techniques, 
@@ -125,6 +124,7 @@ export default function Home() {
               <li><Link href="/courses#premium">Premium Course</Link></li>
               <li><Link href="/courses#ultimate">Ultimate Course</Link></li>
               <li><Link href="/courses#elite">Elite Course</Link></li>
+              <li><Link href="/courses#brush-up">Brush Up Class</Link></li>
             </ul>
           </ScrollReveal>
         </div>

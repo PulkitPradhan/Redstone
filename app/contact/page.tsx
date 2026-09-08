@@ -51,11 +51,11 @@ Message: ${data.message}`;
             </div>
             <div className={styles.infoItem}>
               <h4>Email Us</h4>
-              <a href="mailto:info@redstonedrivingschool.com">info@redstonedrivingschool.com</a>
+              <a href="mailto:info@redstonedriving.com">info@redstonedriving.com</a>
             </div>
             <div className={styles.infoItem}>
               <h4>Service Area</h4>
-              <div>Calgary, Airdrie, Chestermere, Cochrane</div>
+              <div>Calgary, Airdrie, Chestermere, Cochrane, Crossfield, Okotoks, Strathmore</div>
             </div>
             <div className={styles.infoItem}>
               <h4>Hours of Operation</h4>

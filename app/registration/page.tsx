@@ -37,14 +37,14 @@ Email: ${data.email}
 Cell Phone: ${data.phoneCell}
 Home Phone: ${data.phoneHome || 'N/A'}
 Address: ${data.address}
-City: ${data.city} (Town: ${data.cityTown || 'N/A'})
+City/Town: ${data.cityTown || 'N/A'}
 Province: ${data.province}
 Postal Code: ${data.postalCode}
 
 *Course Selection*
 Course: ${data.course}
 Car Rental for Basic Road Test: ${data.carRental}
-Online 15hrs Course: ${data.onlineCourse}
+Online 15 Hours Course: ${data.onlineCourse}
 Estimated Road Test Date: ${data.estimatedTestDate}
 Preferred Start Date: ${data.preferredStartDate}
 

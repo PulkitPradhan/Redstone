@@ -7,7 +7,6 @@ interface ScrollRevealProps {
   children: ReactNode;
   delay?: number;
   yOffset?: number;
-  duration?: number;
   className?: string;
   style?: React.CSSProperties;
 }
@@ -17,7 +16,6 @@ export default function ScrollReveal({
   children,
   delay = 0,
   yOffset = 50,
-  duration = 0.8,
   className = '',
   style = EMPTY_STYLE,
 }: ScrollRevealProps) {

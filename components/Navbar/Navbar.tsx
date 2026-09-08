@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
-import {  m  } from "framer-motion";
-import { useLoading } from '@/components/LoadingContext';
 import styles from './Navbar.module.css';
 
 const scrollToTop = () => {
@@ -15,7 +13,6 @@ const scrollToTop = () => {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
-  const { isLoading } = useLoading();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -30,52 +27,23 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', checkScrollTop);
   }, [showScroll]);
 
-
-  const [isTransitioning, setIsTransitioning] = useState(true);
-
-  useEffect(() => {
-    if (!isLoading) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-      }, 800); // Wait for the 0.8s transition to finish
-      return () => clearTimeout(timer);
-    }
-  }, [isLoading]);
-
   return (
     <>
-      <header 
-        className={styles.header} 
-        style={{ 
-          zIndex: (isLoading || isTransitioning) ? 10001 : 1000,
-          backgroundColor: isLoading ? 'transparent' : 'var(--color-neutral)',
-          boxShadow: isLoading ? 'none' : '0 2px 10px rgba(0, 0, 0, 0.1)',
-          borderBottom: isLoading ? 'none' : '4px solid var(--color-secondary)',
-          pointerEvents: isLoading ? 'none' : 'all',
-          transition: 'background-color 0.8s ease, box-shadow 0.8s ease, border-bottom 0.8s ease'
-        }}
-      >
+      <header className={styles.header}>
         <nav className={styles.navbar}>
           <div className={styles.navInner}>
-            <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)} style={{ pointerEvents: isLoading ? 'none' : 'all' }}>
-              <m.div 
-                layout
-                className={isLoading ? styles.splashLogo : styles.navbarLogo}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              >
+            <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
+              <div className={styles.navbarLogo}>
                 <Image 
-                  src="/logo.webp" 
+                  src="/logo.png" 
                   alt="Redstone Driving School Logo" 
                   fill
                   style={{ objectFit: 'contain' }}
-                  sizes={isLoading ? "173px" : "52px"}
+                  sizes="52px"
                   priority
                 />
-              </m.div>
-              <div 
-                className={styles.logoPlaceholder}
-                style={{ opacity: isLoading ? 0 : 1, transition: 'opacity 0.8s ease' }}
-              >
+              </div>
+              <div className={styles.logoPlaceholder}>
                 Redstone Driving School
               </div>
             </Link>
@@ -84,14 +52,13 @@ export default function Navbar() {
               className={styles.hamburger} 
               onClick={() => setIsOpen(!isOpen)} 
               aria-label="Toggle menu"
-              style={{ opacity: isLoading ? 0 : 1, pointerEvents: isLoading ? 'none' : 'all', transition: 'opacity 0.8s ease' }}
             >
               <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
               <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
               <span className={`${styles.bar} ${isOpen ? styles.open : ''}`}></span>
             </button>
             
-            <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`} style={{ opacity: isLoading ? 0 : 1, pointerEvents: isLoading ? 'none' : 'all', transition: 'opacity 0.8s ease' }}>
+            <ul className={`${styles.navLinks} ${isOpen ? styles.showMenu : ''}`}>
               <li><Link href="/" className={pathname === '/' ? styles.active : ''} onClick={() => setIsOpen(false)}>Home</Link></li>
               <li><Link href="/about" className={pathname === '/about' ? styles.active : ''} onClick={() => setIsOpen(false)}>About</Link></li>
               <li><Link href="/courses" className={pathname === '/courses' ? styles.active : ''} onClick={() => setIsOpen(false)}>Courses & Pricing</Link></li>
@@ -111,7 +78,7 @@ export default function Navbar() {
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
           </button>
         )}
-        <a href="mailto:info@redstonedrivingschool.com" className={styles.floatingIcon} aria-label="Email Us">
+        <a href="mailto:info@redstonedriving.com" className={styles.floatingIcon} aria-label="Email Us">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
         </a>
         <a href="tel:403-763-9365" className={styles.floatingIcon} aria-label="Call Us">

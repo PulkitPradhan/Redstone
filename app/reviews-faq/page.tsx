@@ -6,7 +6,7 @@ import Link from 'next/link';
 const faqItems = [
   {
     question: "What areas do you serve?",
-    answer: "We proudly serve Calgary, Airdrie, Chestermere, and Cochrane."
+    answer: "We proudly serve Calgary, Airdrie, Chestermere, Cochrane, Crossfield, Okotoks, and Strathmore."
   },
   {
     question: "Is pick-up and drop-off included?",
@@ -18,7 +18,7 @@ const faqItems = [
   },
   {
     question: "What vehicle do you use for lessons?",
-    answer: "All lessons are conducted in a clean, modern, and fully insured 2024 Toyota Corolla (Automatic). The car is equipped with dual brakes for your maximum safety."
+    answer: "All lessons are conducted in a clean, modern, and fully insured 2019 Toyota Corolla LE (Automatic). The car is equipped with dual brakes for your maximum safety."
   },
   {
     question: "Are students insured during the lessons?",
@@ -38,7 +38,7 @@ const faqItems = [
   },
   {
     question: "How do I book a lesson?",
-    answer: <>It&apos;s easy! You can <a href="tel:403-763-9365">Call or Text us at 403-763-9365</a>, email us at <a href="mailto:info@redstonedrivingschool.com">info@redstonedrivingschool.com</a>, or use the form on our <Link href="/contact">Contact Page</Link>.</>
+    answer: <>It&apos;s easy! You can <a href="tel:403-763-9365">Call or Text us at 403-763-9365</a>, email us at <a href="mailto:info@redstonedriving.com">info@redstonedriving.com</a>, or use the form on our <Link href="/contact">Contact Page</Link>.</>
   }
 ];
 
@@ -67,7 +67,7 @@ export default function ReviewsFaq() {
               { text: "I enjoyed and benefited from my time with Redstone Driving School's online courses, and I would recommend them to anyone who is looking to increase their knowledge before getting behind the wheel. The modules were clear, flexible, and easy to work with. Before taking the Basic course, I had driven only a handful of times and was anxious. After the online lessons, I was much more confident.", author: "Veronica Moreau" },
               { text: "From the moment I registered for their online program till I completed the course, it was a smooth experience. I took their basic insurance reduction program online. The content is very knowledgeable and has amazing coaching elements. It focuses on areas which need improvement. Highly recommended!", author: "Sundaraj Lakshmipathy" },
               { text: "Five stars definitely not adequate to give Redstone their due! Great experience; the online portal had me feeling comfortable and relaxed. I knew that I would do well on my written test because I felt well-prepared. The course gave many bits of information and advice which are not in the standard learner's manual. I highly recommend Redstone - it's a first class online driving school.", author: "Phillip Noel" }
-            ].map((testi, i) => (
+            ].map((testi) => (
               <div key={testi.author} className={styles.testiCard}>
                 <div className={styles.quoteIcon}>&quot;</div>
                 <p className={styles.testiText}>{testi.text}</p>

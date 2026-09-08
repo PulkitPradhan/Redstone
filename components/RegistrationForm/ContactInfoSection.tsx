@@ -18,21 +18,8 @@ export default function ContactInfoSection() {
       <div className={styles.row}>
         <div className={styles.col}>
           <div className={styles.formGroup}>
-            <label htmlFor="city">City</label>
-            <select id="city" name="city">
-              <option value="Calgary">Calgary</option>
-              <option value="Airdrie">Airdrie</option>
-              <option value="Chestermere">Chestermere</option>
-              <option value="Strathmore">Strathmore</option>
-              <option value="Cochrane">Cochrane</option>
-              <option value="Others">Others</option>
-            </select>
-          </div>
-        </div>
-        <div className={styles.col}>
-          <div className={styles.formGroup}>
-            <label htmlFor="cityTown">City/Town</label>
-            <input id="cityTown" type="text" name="cityTown" />
+            <label htmlFor="cityTown">City/Town <span className={styles.required}>*</span></label>
+            <input id="cityTown" type="text" name="cityTown" required />
           </div>
         </div>
         <div className={styles.col}>
